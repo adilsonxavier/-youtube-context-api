@@ -4,11 +4,15 @@ import { Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './history';
 
+import { AuthProvider } from "./context/AuthContext";
+
 function App() {
-  return (
-    <Router history={history}>
-      <Routes />
-    </Router>
+    return (
+        <AuthProvider>
+            <Router history={history}>
+                <Routes />
+            </Router>
+        </AuthProvider>
   );
 }
 
